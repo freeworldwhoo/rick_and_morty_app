@@ -1,12 +1,12 @@
-import React from 'react'
-import PageNumbring from './PageNumbring'
+import { useState,useEffect } from 'react'
+import PageNumbring from '../../components/page_numbering/PageNumbring.jsx'
 import './charachters.css'
-import CharCard from '../cards/card.jsx'
+import CharCard from '../../components/cards/card.jsx'
 function Charachters(){
-    const [curent,setCurent] = React.useState(1)
-    const [pages,setPages] = React.useState(0)
-    const [inforamtions,setInformations] = React.useState([])
-    React.useEffect(()=>{
+    const [curent,setCurent] = useState(1)
+    const [pages,setPages] = useState(0)
+    const [inforamtions,setInformations] = useState([])
+    useEffect(()=>{
         async function getPages(){
             const data = await window.fetch('https://rickandmortyapi.com/api/character',{ method : 'GET'}).then(r=>r.json())
             const num = data.info.pages
@@ -15,7 +15,7 @@ function Charachters(){
         }
         getPages()
     },[])
-    React.useEffect(()=>{
+    useEffect(()=>{
         async function getPageInfo(){
             const data = await window.fetch('https://rickandmortyapi.com/api/character/?page='+curent,{ method : 'GET'}).then(r=>r.json())
             const info = await data.results

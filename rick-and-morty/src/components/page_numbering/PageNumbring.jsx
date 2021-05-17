@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import './page_numbering.css'
 
 function PageNumbring({curent,setCurent,pages}){

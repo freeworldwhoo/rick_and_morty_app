@@ -1,5 +1,5 @@
 import React from 'react'
-import PageNumbring from '../home/PageNumbring'
+import PageNumbring from '../../components/page_numbering/PageNumbring'
 
 function Epesods(){
     const [curent,setCurent] = React.useState(1)

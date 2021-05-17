@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react'
 import './flipping-card.css'
-import star from './star.png'
+import star from '../../images/star.png'
 
 function CharCard({id,info}){
     const [firstSeen,setFisrstSeen] = useState('Uknown')

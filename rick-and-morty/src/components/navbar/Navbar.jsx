@@ -30,7 +30,7 @@ function NavBar(){
                     setCurent(5)
             }
     
-    },[])
+    },[pathname])
     
 
 

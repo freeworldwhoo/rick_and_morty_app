@@ -1,12 +1,39 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import './navbar.css'
-import {NavLink} from 'react-router-dom'
+import {NavLink, useLocation} from 'react-router-dom'
 import logo_img from '../../images/logo.png'
 
 function NavBar(){
 
     const [active,setActive] = useState( false)
+    const {pathname} = useLocation()
     const [curent,setCurent] = useState(0)
+
+    useEffect(()=>{
+        switch (pathname){
+                case '/':
+                    setCurent(0)
+                    break;
+                case '/charachters':
+                    setCurent(1)
+                    break;
+                case '/locations':
+                    setCurent(2)
+                    break;
+                case '/episodes':
+                    setCurent(3)
+                    break;
+                case '/favorit':
+                    setCurent(4)
+                    break;
+                default:
+                    setCurent(5)
+            }
+    
+    },[])
+    
+
+
     return(
         <nav className="navbar">
             <div onClick={()=>setCurent(0)} className="logo">

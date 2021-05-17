@@ -20,7 +20,7 @@ function Charachters(){
     useEffect(()=>{
         async function getPageInfo(){
             setIsLoading(true)
-            const data = await window.fetch('https://rickandmortyapi.com/api/character/?page='+curent,{ method : 'GET'}).then(r=>r.json())
+            const data = await window.fetch(`https://rickandmortyapi.com/api/character/?page=${curent}`,{ method : 'GET'}).then(r=>r.json())
             const info = await data.results
             setIsLoading(false)
             setInformations(info)
@@ -35,7 +35,7 @@ function Charachters(){
             <div className="chars-container"> 
                 {inforamtions.map(item => {
                     return(
-                        <CharCard id={item.id} info={item}></CharCard>
+                        <CharCard key={item.id} info={item}></CharCard>
                     )
                 })}
             </div>

@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.card{
+    width: 304px;
+    width: 304px;
+    margin: 10px;
+}
+
+.front{
+    width: 304px;
+    height: 304px;
+    border: 2px solid #D2E054;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 9px;
+    overflow: hidden;
+    
+}
+
+
+.back{
+    position: relative;
+    width: 304px;
+    height: 304px;
+    border: 2px solid #D2E054;
+    border-radius: 9px;
+    overflow: hidden;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.back h3{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin:10px;
+    top:0px;
+    font-family: 'Creepster', cursive;
+    color: #12B0C9;
+    font-size: 33;
+    -webkit-text-stroke:0.1px #D2E054;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.info{
+    position: absolute;
+    background-color: rgba(60, 182, 74, 0.5);
+    width: 300px;
+    height: 200px;
+    border-radius: 9px;
+    top:102px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.back .char-img{
+    transform: rotateY(180deg);
+    filter: blur(3px);
+
+}
+.star-icon{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.info .status{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    color: #001500;    ;
+}
+
+.status-icon {
+    border: 1px solid #001500;
+    margin-right: 10px;
+    margin-left: 15px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}
+.status-icon.Alive{
+    background: green;
+}
+.status-icon.Dead{
+    background-color: red;
+}
+.status-icon.unknown{
+    background-color: cadetblue;
+}
+
+.section{
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+.section .text-gray{
+    color: #304630;
+}
+.section .info-text{
+    padding: 5px;
+    color:#001500;
+}
+
+
+.front{
+    position: absolute;
+}
+.back{
+    transform: rotateY(90deg);
+}
+
+@keyframes rotation {
+    from {transform: rotateY(0deg);}
+    to {transform: rotateY(90deg);}
+}
+
+.card:hover .front{
+    animation: rotation 0.15s  both;
+}
+
+.card:hover .back{
+    animation: rotation 0.15s 0.15s reverse  both;
+}
+
+
+
+

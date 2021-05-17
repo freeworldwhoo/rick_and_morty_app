@@ -1,12 +1,12 @@
 import React from 'react'
-import PageNumbring from './../home/PageNumbring'
+import PageNumbring from '../../components/page_numbering/PageNumbring.jsx'
 
-function Places(){
+function Epesods(){
     const [curent,setCurent] = React.useState(1)
     const [pages,setPages] = React.useState(0)
     React.useEffect(()=>{
         async function getPages(){
-            const data = await window.fetch('https://rickandmortyapi.com/api/location',{ method : 'GET'}).then(r=>r.json())
+            const data = await window.fetch('https://rickandmortyapi.com/api/episode',{ method : 'GET'}).then(r=>r.json())
             const num = data.info.pages
             setPages(num)
         }
@@ -15,10 +15,9 @@ function Places(){
     },[])
     return(
         <>
-        <h1>holla</h1>
         <PageNumbring curent = {curent} setCurent = {setCurent} pages={pages}/>
         </>
     )
     
 }
-export default Places
+export default Epesods

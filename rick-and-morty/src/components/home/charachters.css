@@ -16,5 +16,16 @@
     margin-left: 10%;
     margin-right: 10%;
 }
+@media screen and (min-width: 1440px) {
+    .chars-container{
+        width: 1024px;
+        margin: 0px;
+    }
+    .chars-root{
+        display: flex;
+        justify-content: center;
+    }
+    
+}
 
 

@@ -2,7 +2,6 @@ import React from 'react'
 import PageNumbring from './PageNumbring'
 import './charachters.css'
 import CharCard from '../cards/card.jsx'
-import NavBar from '../navbar/Navbar'
 function Charachters(){
     const [curent,setCurent] = React.useState(1)
     const [pages,setPages] = React.useState(0)
@@ -29,7 +28,7 @@ function Charachters(){
         <>
         <PageNumbring curent = {curent} setCurent = {setCurent} pages={pages}/>
         <div className='chars-root'>
-            <div className="chars-container">   
+            <div className="chars-container"> 
                 {inforamtions.map(item => {
                     return(
                         <CharCard id={item.id} info={item}></CharCard>

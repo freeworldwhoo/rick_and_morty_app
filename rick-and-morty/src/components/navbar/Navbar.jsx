@@ -20,7 +20,7 @@ function NavBar(){
                 case '/locations':
                     setCurent(2)
                     break;
-                case '/episodes':
+                case '/epesodes':
                     setCurent(3)
                     break;
                 case '/favorit':
@@ -45,7 +45,7 @@ function NavBar(){
                 <li className={curent === 0 ? "links active" : "links not-active"}><NavLink onClick={()=>setCurent(0)} className="links-text" exact to='/'><div>Home</div>  </NavLink></li>
                 <li className={curent === 1 ? "links active" : "links not-active"}><NavLink onClick={()=>setCurent(1)} className="links-text" exact to='/charachters'><div>charachters</div>  </NavLink></li>
                 <li className={curent === 2 ? "links active" : "links not-active"}><NavLink onClick={()=>setCurent(2)} className="links-text" exact to='/locations'><div>Locations </div> </NavLink></li>
-                <li className={curent === 3 ? "links active" : "links not-active"}><NavLink onClick={()=>setCurent(3)} className="links-text" exact to='/episodes'><div>episodes</div>  </NavLink></li>
+                <li className={curent === 3 ? "links active" : "links not-active"}><NavLink onClick={()=>setCurent(3)} className="links-text" exact to='/epesodes'><div>episodes</div>  </NavLink></li>
                 <li className={curent === 4 ? "links active" : "links not-active"}><NavLink onClick={()=>setCurent(4)} className="links-text" exact to='/favorit'><div>favorit</div>  </NavLink></li>
             </ul>
             <div onClick={()=>setActive(!active)} className="burger">

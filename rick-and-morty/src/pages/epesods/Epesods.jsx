@@ -1,7 +1,7 @@
 import React from 'react'
 import PageNumbring from '../../components/page_numbering/PageNumbring.jsx'
 
-function Epesods(){
+function Epesodes(){
     const [curent,setCurent] = React.useState(1)
     const [pages,setPages] = React.useState(0)
     React.useEffect(()=>{
@@ -20,4 +20,4 @@ function Epesods(){
     )
     
 }
-export default Epesods
+export default Epesodes

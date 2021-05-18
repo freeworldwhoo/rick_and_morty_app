@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./slider_image.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="root">
+
+	</div>
+	
+</body>
+<script>
+	const r = document.querySelector('.root')
+	let down = false
+	const width = 1000
+	const height = 500
+	const image_array = ['./1.jpg', './2.jpg', './3.jpg', './4.jpg', './5.jpg', './6.jpg', './7.jpg', './8.jpg', './9.jpg', './10.jpg']
+	let curent = 0
+	console.log(r)
+	r.addEventListener('mousedown', () =>{
+		down = true
+	})
+	r.addEventListener('mouseup',() =>{
+		down = false
+	})
+	r.addEventListener('mouseleave',()=>{
+		down = false
+	})
+	r.addEventListener('mousemove', e=>{
+		if (down) console.log(e.clientY,e.clientX);
+	})
+</script>
+</html>

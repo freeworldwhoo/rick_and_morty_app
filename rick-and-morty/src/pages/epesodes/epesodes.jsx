@@ -1,10 +1,10 @@
-import React from 'react'
+import { useState,useEffect } from 'react'
 import PageNumbring from '../../components/page_numbering/PageNumbring.jsx'
 
 function Epesodes(){
-    const [curent,setCurent] = React.useState(1)
-    const [pages,setPages] = React.useState(0)
-    React.useEffect(()=>{
+    const [curent,setCurent] = useState(1)
+    const [pages,setPages] = useState(0)
+    useEffect(()=>{
         async function getPages(){
             const data = await window.fetch('https://rickandmortyapi.com/api/episode',{ method : 'GET'}).then(r=>r.json())
             const num = data.info.pages

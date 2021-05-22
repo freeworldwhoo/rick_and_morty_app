@@ -14,7 +14,7 @@ function SliderImage(){
 	useEffect(()=>{
 		const start = curent - 2 < 0 ? len + curent  -  2 : curent - 2
 		setImageShow([...Array(7).keys()].map((i)=> {return((i+start)%len)}))
-	},[curent])
+	},[curent,len])
 
 
 	return(

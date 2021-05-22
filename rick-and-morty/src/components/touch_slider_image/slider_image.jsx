@@ -10,12 +10,30 @@ function SliderImage(){
 	const [imageShow,setImageShow] = useState([])
 	const [direction,setDirection] = useState(true)
 
+	const get_x_sacale = ()=>{
+		const Scale = [...Array(9).keys()].map((i)=>{
+			return( Math.pow(0.5, Math.abs(i-4)))
+		})
+
+		let X = [...Array(9).keys()].map((i)=>{
+			const signe = ((i-4)/Math.abs(i-4))
+			return( (signe ? signe : 0 ) *  Math.pow(0.5, Math.abs(i-4)) * 500 )
+		})
+		for (let i = 0 ; i < 5 ; i++){
+			for (let j = i + 1; j < 5; j++){
+				X[i] += X[j]
+				X[8 - i] += X[8 - j]
+			}
+		}
+		return([X,Scale])
+	}
+	const [X,Scale] = get_x_sacale()
+	console.log(X,Scale)
 
 	useEffect(()=>{
 		const start = curent - 2 < 0 ? len + curent  -  2 : curent - 2
 		setImageShow([...Array(7).keys()].map((i)=> {return((i+start)%len)}))
 	},[curent,len])
-
 
 	return(
 		<div className="slider-container">
@@ -23,13 +41,15 @@ function SliderImage(){
 				{
 					imageShow.map((item,index)=>{
 						return(
-								<motion.div key={item} className="slider-image"
-									initial = {{x: 500 * (index - (direction ? 2 : 5)),
+								<motion.div  key={item} className="slider-image"
 
-												// scale:
-												
+									style={{zIndex:10-Math.abs(3-index)}}
+									initial = {{x: direction ? X[index] : X[index+2],
+												scale: direction ? Scale[index] : Scale[index+2]
 									}}
-									animate = {{x: 500 * (index - 3)}}
+									animate = {{x: X[index + 1],
+												scale:Scale[index + 1]
+									 }}
 								>
 									<img src={image_array[item]} alt={index} />
 								</motion.div>

@@ -9,6 +9,8 @@ function SliderImage(){
 	const [curent,setCurent] = useState(0)
 	const [imageShow,setImageShow] = useState([])
 	const [direction,setDirection] = useState(true)
+	const [X,setX] = useState([])
+	const [Scale,setScale] = useState([])
 
 	const get_x_sacale = ()=>{
 		const Scale = [...Array(9).keys()].map((i)=>{
@@ -27,14 +29,18 @@ function SliderImage(){
 		}
 		return([X,Scale])
 	}
-	const [X,Scale] = get_x_sacale()
-	console.log(X,Scale)
-
 	useEffect(()=>{
-		const start = curent - 2 < 0 ? len + curent  -  2 : curent - 2
-		setImageShow([...Array(7).keys()].map((i)=> {return((i+start)%len)}))
-	},[curent,len])
-
+		const [x,s] = get_x_sacale()
+		setX(x)
+		setScale(s)
+		console.log('here')
+	},[])
+		
+		useEffect(()=>{
+			const start = curent - 2 < 0 ? len + curent  -  2 : curent - 2
+			setImageShow([...Array(7).keys()].map((i)=> {return((i+start)%len)}))
+		},[curent,len])
+		
 	return(
 		<div className="slider-container">
 			<div className="images-slider">
